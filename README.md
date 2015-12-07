@@ -21,3 +21,6 @@ The sketch is inside the `arduino` directory. By default it uses pin 9.  Just ma
 - [ ] Extract serial port to be configurable
 - [ ] Add simple rest API
 - [ ] Add simple mobile UI with AJAX like features
+
+## Contributing
+Pull requests welcome!
