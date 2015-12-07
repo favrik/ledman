@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler'
+require 'serialport'
 
 Bundler.require
 
@@ -20,6 +21,23 @@ module Ledman
 
     get '/' do
       "#{['Hello', 'Hi', 'Hey', 'Yo'][rand(4)]} World!"
+    end
+
+    get '/on' do
+      serialport_write '1'
+      redirect '/'
+    end
+
+    get '/off' do
+      serialport_write '0'
+      redirect '/'
+    end
+
+    private
+
+    def serialport_write(data)
+      serialport = Serial.new '/dev/ttyACM1'
+      serialport.write data
     end
   end
 end
