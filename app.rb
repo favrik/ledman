@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'bundler'
-require 'serialport'
+require 'rubyserial'
 
 Bundler.require
 
